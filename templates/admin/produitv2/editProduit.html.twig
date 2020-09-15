@@ -1,0 +1,11 @@
+{% extends "admin/layout.html.twig" %}
+{% block body %}
+    <div class="container">
+        <form method="post" action="{{ path('admin_produitv2_edit') }}">
+            <legend>Modifier un produit(v2)</legend>
+
+            {{ include('admin/produit/_formProduit.html.twig', {button: 'Modifier'}) }}
+
+        </form>
+    </div>
+{% endblock %}
