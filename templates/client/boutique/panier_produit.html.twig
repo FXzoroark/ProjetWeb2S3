@@ -1,0 +1,50 @@
+{% extends "client/layout_client.html.twig" %}
+{% block body %}
+    <div class="container">
+        <div class="row align-self-right">
+            <div class="col-7">
+                <div class="col-5 bg-light p-3">
+                    <h3>Les filtres</h3>
+                </div>
+                les filtres ...
+            </div>
+            <div class="col-5">
+                <div class="col-5 bg-light p-3">
+                    <h3>Le panier</h3>
+                </div>
+                le panier +liens
+            </div>
+
+        </div>
+
+
+        <div class="bg-light p-3">
+            <h1>Les produits</h1>
+        </div>
+
+        <div class="row">
+            {% for produit in produits  %}
+                <div class="col-4 mt-4">
+                    <div class="border border-dark rounded p-2 clearfix">
+                        <h2>
+                            {{ produit.nom }}
+                            -
+                            {{ produit.prix }}
+                            €
+                        </h2>
+                        {%  if produit.photo is not empty %}
+                            <img class="img-fluid rounded"  style="width:150px;height:100px"  src="{{asset('images/')}}{{produit.photo}}"  alt="image  de {{ produit.nom }}" >
+                        {% else %} <img class="img-fluid rounded"   style="width:100px;height:100px"   src="{{asset('images/')}}no_photo.jpeg"  alt="image  de {{ produit.nom }}" >
+                        {% endif %}
+                        <hr>
+                        <a href="#" class="btn btn-success float-right">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Ajouter
+                        </a>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
