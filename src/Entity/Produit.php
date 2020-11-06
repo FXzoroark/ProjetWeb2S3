@@ -3,7 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\ProduitRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -26,22 +30,42 @@ class Produit
     private $nom;
 
     /**
-     * @ORM\Column(type="decimal", precision=8, scale=2, nullable=true)
+     * @ORM\Column(name="prix", type="decimal", precision=8, scale=2, nullable=true)
+     * @Assert\NotBlank(message = "Saisir un prix ")                                           //***
+     * @Assert\Type(type="numeric",message =  "La valeur {{ value }} n'est pas valide, le type est {{ type }} ")
+     * @Assert\Regex(
+     *     pattern = "/^[0-9]{1,}\,{0,1}[0-9]{0,}$/",
+     *     message = "Seulement un entier positif."
+     *     )
      */
     private $prix;
 
     /**
      * @ORM\Column(type="date", nullable=true)
+     * @Assert\NotBlank(
+     *      message= "Donner une date"
+     * )
      */
     private $dateLancement;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(
+     *      message= "selectionner une photo"
+     * )
+     * Assert\File(
+     *     maxSize = "1024k",
+     *     mimeTypes={ "image/png" ,"image/jpg","image/jpeg"},
+     *     mimeTypesMessage = "Svp inserer une forme valide (png,jpg,jpeg)"
+     * )
      */
     private $photo;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank(
+     *      message= "Donner une quantité"
+     * )
      */
     private $stock;
 
@@ -52,8 +76,27 @@ class Produit
 
     /**
      * @ORM\ManyToOne(targetEntity=TypeProduit::class, inversedBy="produits")
+     * @Assert\NotBlank(
+     *      message= "selectionner un type"
+     * )
      */
     private $typeProduit;
+
+    /**
+     * @ORM\OneToMany(targetEntity=LigneCommande::class, mappedBy="produit")
+     */
+    private $ligneCommandes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Panier::class, mappedBy="produit")
+     */
+    private $panierProduits;
+
+    public function __construct()
+    {
+        $this->ligneCommandes = new ArrayCollection();
+        $this->panierProduits = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -148,6 +191,68 @@ class Produit
     public function setStock(?int $stock): self
     {
         $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|LigneCommande[]
+     */
+    public function getLigneCommandes(): Collection
+    {
+        return $this->ligneCommandes;
+    }
+
+    public function addLigneCommande(LigneCommande $ligneCommande): self
+    {
+        if (!$this->ligneCommandes->contains($ligneCommande)) {
+            $this->ligneCommandes[] = $ligneCommande;
+            $ligneCommande->setProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLigneCommande(LigneCommande $ligneCommande): self
+    {
+        if ($this->ligneCommandes->contains($ligneCommande)) {
+            $this->ligneCommandes->removeElement($ligneCommande);
+            // set the owning side to null (unless already changed)
+            if ($ligneCommande->getProduit() === $this) {
+                $ligneCommande->setProduit(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Panier[]
+     */
+    public function getPanierProduits(): Collection
+    {
+        return $this->panierProduits;
+    }
+
+    public function addPanierProduits(Panier $panierProduits): self
+    {
+        if (!$this->panierProduits->contains($panierProduits)) {
+            $this->panierProduits[] = $panierProduits;
+            $panierProduits->setProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removePanierProduits(Panier $panierProduits): self
+    {
+        if ($this->panierProduits->contains($panierProduits)) {
+            $this->panierProduits->removeElement($panierProduits);
+            // set the owning side to null (unless already changed)
+            if ($panierProduits->getProduit() === $this) {
+                $panierProduits->setProduit(null);
+            }
+        }
 
         return $this;
     }

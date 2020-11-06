@@ -11,17 +11,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b739d782-b4b9-46b1-9a6e-37f086ccf21d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/S3tp2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/S3tp2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProduitV1Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProduitV2Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Produit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProduitV1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/TypeProduit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TypeProduit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produit/_formProduit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/produit/_formProduit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produit/addProduit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/produit/addProduit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produit/detailsProduit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/produit/detailsProduit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produit/editProduit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/produit/editProduit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produit/showProduits.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/produit/showProduits.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produitv2/_formProduit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produitv2/addProduit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produitv2/detailsProduit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produitv2/detailsTypeProduit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produitv2/editProduit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/produitv2/showProduits.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +159,7 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hBwyDUYKa3SHHqlNWouaErxzC4" />
@@ -153,19 +171,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Controller/Client" />
+      <recent name="$PROJECT_DIR$/templates/client/boutique" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/templates/client" />
+      <recent name="$PROJECT_DIR$/templates/admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/admin" />
-      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
-      <recent name="$PROJECT_DIR$/templates/admin/produit" />
-      <recent name="$PROJECT_DIR$/src/Entity" />
+      <recent name="$PROJECT_DIR$/templates/client" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -184,7 +206,20 @@
       <workItem from="1599933546285" duration="832000" />
       <workItem from="1599975408927" duration="3430000" />
       <workItem from="1599979904788" duration="7420000" />
-      <workItem from="1600186491599" duration="1292000" />
+      <workItem from="1600186491599" duration="2253000" />
+      <workItem from="1600249365912" duration="19104000" />
+      <workItem from="1600880224871" duration="665000" />
+      <workItem from="1600963431402" duration="2304000" />
+      <workItem from="1601116115702" duration="12163000" />
+      <workItem from="1601567786606" duration="3371000" />
+      <workItem from="1601728271174" duration="22475000" />
+      <workItem from="1601834290775" duration="579000" />
+      <workItem from="1601911481776" duration="316000" />
+      <workItem from="1602086639116" duration="2372000" />
+      <workItem from="1602607373118" duration="751000" />
+      <workItem from="1602673131131" duration="15000" />
+      <workItem from="1604569108184" duration="5744000" />
+      <workItem from="1604668331540" duration="6160000" />
     </task>
     <servers />
   </component>
@@ -201,8 +236,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="584" y="205" width="732" height="632" key="#Inspections" timestamp="1602607448649">
+      <screen x="0" y="0" width="1920" height="1042" />
+    </state>
+    <state x="584" y="205" width="732" height="632" key="#Inspections/0.0.1920.1042@0.0.1920.1042" timestamp="1602607448649" />
+    <state x="604" y="0" width="693" height="1037" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601740219351">
+      <screen x="0" y="0" width="1920" height="1042" />
+    </state>
+    <state x="604" y="0" width="693" height="1037" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1042@0.0.1920.1042" timestamp="1601740219351" />
+    <state x="743" y="278" width="424" height="479" key="FileChooserDialogImpl" timestamp="1602673138122">
+      <screen x="0" y="0" width="1920" height="1042" />
+    </state>
+    <state x="743" y="278" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1042@0.0.1920.1042" timestamp="1602673138122" />
+    <state x="773" y="445" width="354" height="142" key="NewPhpFileDialog" timestamp="1601569309409">
+      <screen x="0" y="0" width="1920" height="1042" />
+    </state>
+    <state x="773" y="445" width="354" height="142" key="NewPhpFileDialog/0.0.1920.1042@0.0.1920.1042" timestamp="1601569309409" />
     <state x="464" y="155" key="SettingsEditor" timestamp="1599498080429">
       <screen x="0" y="0" width="1920" height="1042" />
     </state>
@@ -211,9 +263,9 @@
       <screen x="0" y="0" width="1920" height="1042" />
     </state>
     <state x="570" y="133" width="770" height="768" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1042@0.0.1920.1042" timestamp="1599982415159" />
-    <state x="666" y="100" width="587" height="840" key="find.popup" timestamp="1599985155643">
+    <state x="666" y="100" width="587" height="840" key="find.popup" timestamp="1600964918262">
       <screen x="0" y="0" width="1920" height="1042" />
     </state>
-    <state x="666" y="100" width="587" height="840" key="find.popup/0.0.1920.1042@0.0.1920.1042" timestamp="1599985155643" />
+    <state x="666" y="100" width="587" height="840" key="find.popup/0.0.1920.1042@0.0.1920.1042" timestamp="1600964918262" />
   </component>
 </project>

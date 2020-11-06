@@ -7,16 +7,55 @@ use Doctrine\Persistence\ObjectManager;
 
 use App\Entity\TypeProduit;
 use App\Entity\Produit;
-use phpDocumentor\Reflection\Types\Integer;
+
+use App\Entity\User;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
 {
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
     public function load(ObjectManager $manager)
     {
-        // $product = new Product();
-        // $manager->persist($product);
         $this->loadTypeProduits($manager);
         $this->loadProduits($manager);
+        $this->loadUsers($manager);
+    }
+
+
+    public function loadUsers(ObjectManager $manager)
+    {
+        echo " \n\nles utilisateurs : \n";
+
+        $admin = new User();
+        $password = $this->passwordEncoder->encodePassword($admin, 'admin');
+        $admin->setPassword($password);
+        $admin->setRoles(['ROLE_ADMIN'])
+            ->setUsername('admin')->setEmail('admin@example.com')->setIsActive('1');
+        $manager->persist($admin);
+        echo $admin."\n";
+
+        $client = new User();
+        $password = $this->passwordEncoder->encodePassword($client, 'user1');
+        $client->setPassword($password);
+        $client->setRoles(['ROLE_CLIENT'])->setUsername('user1')
+            ->setEmail('user1@example.com')->setIsActive('1');
+        $manager->persist($client);
+        echo $client."\n";
+
+        $client2 = new User();
+        $password = $this->passwordEncoder->encodePassword($client, 'user2');
+        $client2->setPassword($password);
+        $client2->setRoles(['ROLE_CLIENT'])->setUsername('user2')
+            ->setEmail('user2@example.com')->setIsActive('1');
+        $manager->persist($client2);
+        echo $client2."\n";
+
         $manager->flush();
     }
 

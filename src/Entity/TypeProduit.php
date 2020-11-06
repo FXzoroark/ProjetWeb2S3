@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity(repositoryClass=TypeProduitRepository::class)
  */
@@ -21,6 +23,8 @@ class TypeProduit
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="saisir un nom")
+     * @Assert\Length(min=2, minMessage = "votre nom doit être composé de {{ limit }} caractères minimum")
      */
     private $libelle;
 

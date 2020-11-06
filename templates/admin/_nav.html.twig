@@ -37,7 +37,7 @@
                 <div class="dropdown-menu" aria-labelledby="DropdownProduits">
                     <a class="dropdown-item" href="{{ path('admin_produit_show') }}">Gestion des produits</a>
                     <a class="dropdown-item" href="{{ path('admin_produit_details') }}"> Détails des types de produit </a>
-                    <a class="dropdown-item" href="{{ path('admin_produitv2_show') }}">Gestion des produits (v2)</a>
+                    <a class="dropdown-item" href="{{ path('admin_type_produit_index') }}"> Gestion des types de produit </a>
                 </div>
             </li>
         </ul>
@@ -50,12 +50,12 @@
                     {% if is_granted('ROLE_ADMIN') %} (role : Admin )
                     {% elseif is_granted('ROLE_CLIENT') %} (role : Client ) {% endif %}
             </span>
-                <a class="btn btn-outline-success" type="button" href="{{path('logout') }}">
+                <a class="btn btn-outline-success" type="button" href="{{path('app_logout') }}">
                     Se déconnecter
                 </a>
 
             {% else %}
-                <a class="btn btn-outline-success" type="button" href="{#{path('login') }#}">
+                <a class="btn btn-outline-success" type="button" href="{{path('app_login') }}">
                     Se connecter
                 </a>
                 <a class="btn btn-outline-success" type="button" href="{#{path('changePassword') }#}">

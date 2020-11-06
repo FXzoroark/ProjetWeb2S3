@@ -1,12 +1,13 @@
 {% extends "admin/layout.html.twig" %}
 {% block body %}
     <div class="container">
+        Recapitulatifs des produits
         <div class="row">
             <a href="{{ path('admin_produit_add') }}" class="btn btn-primary m-1 p-1"> Ajouter un produit </a>
         </div>
         <div>
             <table class="table">
-                <caption>Recapitulatifs des produits</caption>
+                <caption>Recapitulatifs des produits (V3 : essai form)</caption>
                 <thead class="thead-dark">
                 <tr><th>nom</th><th>id</th><th>type</th><th>prix</th><th>nom photo</th><th>photo</th>
                     <th>opération</th>
